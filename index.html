@@ -1,164 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Vaibhav Tripathi | Healthcare Data & Analytics Leader</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<title>Vaibhav Tripathi | Professional Journey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+<!-- Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<!-- React -->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
 <style>
+body {
+  transition: background 0.3s, color 0.3s;
+}
 
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:#e5e7eb;
+.dark {
+  background:#0f172a!important;
+  color:#e5e7eb!important;
 }
-header{
-    background:#020617;
-    padding:80px 20px;
-    text-align:center;
+
+.hero {
+  padding: 80px 20px;
+  text-align:center;
 }
-header h1{
-    font-size:42px;
-    margin-bottom:10px;
-    color:#38bdf8;
+
+.timeline {
+  position:relative;
+  margin-left:20px;
+  border-left:3px solid #38bdf8;
+  padding-left:20px;
 }
-header h2{
-    font-size:18px;
-    font-weight:300;
-    color:#e2e8f0;
+
+.timeline-item {
+  opacity:0;
+  transform:translateX(-40px);
+  transition:.6s;
+  margin-bottom:30px;
 }
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:50px 20px;
+
+.timeline-item.show {
+  opacity:1;
+  transform:translateX(0);
 }
-.section-title{
-    font-size:26px;
-    color:#38bdf8;
-    margin-bottom:10px;
+
+.card-custom{
+  background:#020617;
+  border-radius:12px;
+  border:1px solid #1f2937;
+  padding:15px;
 }
-.card{
-    background:#020617;
-    padding:25px;
-    border-radius:10px;
-    margin-top:15px;
-    border:1px solid #1e293b;
-}
-.highlight{
-    color:#a5f3fc;
-}
-ul{
-    line-height:1.8;
-}
+
 footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #1f2937;
-    color:#9ca3af;
+  margin-top:40px;
+  padding:20px;
+  text-align:center;
+  border-top:1px solid #ddd;
 }
-.button{
-    display:inline-block;
-    padding:12px 20px;
-    margin-top:15px;
-    border-radius:8px;
-    background:#38bdf8;
-    color:#000;
-    text-decoration:none;
-    font-weight:600;
-}
-.button:hover{
-    background:#67e8f9;
-}
-a{
-    color:#67e8f9;
-}
-
 </style>
 </head>
 
-<body>
+<body id="root"></body>
 
-<header>
-    <h1>Vaibhav Kumar Tripathi</h1>
-    <h2>Healthcare Data & Analytics Leader | MDM & Data Governance | Business Intelligence | Enterprise Data Strategy</h2>
-    <p>13+ years of experience driving enterprise data strategy, analytics innovation, and data governance excellence across healthcare organizations</p>
-    <a class="button" href="Vaibhav Tripathi_Resume_Original.pdf">Download Resume</a>
-</header>
+<script type="text/babel">
 
-<div class="container">
+function App(){
 
-<section>
-    <h3 class="section-title">Professional Summary</h3>
-    <div class="card">
-        Strategic and results-driven healthcare data and analytics professional with extensive experience leading enterprise
-        data initiatives, Master Data Management (MDM), data governance, predictive analytics, and Business Intelligence.
-        Proven record of building scalable, compliant, and reliable data ecosystems supporting clinical, operational, and executive decision-making.
-        Recently completed a Ph.D. in Data Analytics & Business Administration, bringing advanced analytical rigor and research-driven insight.
+const [dark,setDark]=React.useState(false);
+
+React.useEffect(()=>{
+  const items=document.querySelectorAll(".timeline-item");
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add("show");
+    });
+  });
+  items.forEach(i=>observer.observe(i));
+},[]);
+
+return(
+<div className={dark?"dark":""}>
+  
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div className="container">
+    <a className="navbar-brand" href="#">Vaibhav Tripathi</a>
+
+    <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="collapse navbar-collapse" id="nav">
+      <ul className="navbar-nav ms-auto">
+        <li><a className="nav-link" href="#home">Home</a></li>
+        <li><a className="nav-link" href="#journey">Journey</a></li>
+        <li><a className="nav-link" href="#research">Research</a></li>
+        <li><a className="nav-link" href="#cert">Certifications</a></li>
+        <li><a className="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <button className="btn btn-warning ms-3" onClick={()=>setDark(!dark)}>
+        {dark?"Light Mode":"Dark Mode"}
+      </button>
     </div>
+  </div>
+</nav>
+
+<section id="home" className="hero mt-5">
+<img src="https://via.placeholder.com/150" className="rounded-circle mb-3"/>
+<h1 className="fw-bold">Vaibhav Kumar Tripathi</h1>
+<h4>Healthcare Data & Analytics | MDM | BI Strategy</h4>
+<p className="mt-3">Transforming healthcare through data strategy, governance, analytics innovation & enterprise systems leadership.</p>
+
+<a href="resume.pdf" className="btn btn-info btn-lg m-2" download>
+<i className="bi bi-download"></i> Download Resume
+</a>
+
+<a href="#journey" className="btn btn-primary btn-lg m-2">
+Explore My Journey →
+</a>
 </section>
 
-<section>
-    <h3 class="section-title">Current Role</h3>
-    <div class="card">
-        <strong>Senior MDM Administrator — Presbyterian Healthcare Services</strong><br>
-        <span class="highlight">Feb 2019 – Present | Albuquerque, NM</span>
-        <ul>
-            <li>Lead enterprise Master Data Management strategy, governance frameworks, and data quality standards</li>
-            <li>Design and support enterprise data warehouse initiatives and Epic data integrations (Clarity, Chronicles, Caboodle)</li>
-            <li>Develop complex ETL pipelines and automation using SQL, PL/SQL, IBM DataStage, PowerShell</li>
-            <li>Enable strategic decision support and enterprise analytics capabilities</li>
-            <li>Improved enterprise data quality by 25% and reduced BI reporting latency by 40%</li>
-        </ul>
-    </div>
-</section>
 
-<section>
-    <h3 class="section-title">Core Expertise</h3>
-    <div class="card">
-        <ul>
-            <li><span class="highlight">Enterprise Data Strategy & Governance</span></li>
-            <li>Master Data Management (IBM MDM), Data Quality & Compliance</li>
-            <li>Business Intelligence & Analytics</li>
-            <li>Epic Healthcare Data Ecosystems</li>
-            <li>Predictive Analytics & Decision Support</li>
-            <li>SQL, PL/SQL, Python, SAS, ETL Architecture</li>
-        </ul>
-    </div>
-</section>
+<section id="journey" className="container mt-5">
+<h2 className="text-center mb-4">Professional Journey</h2>
 
-<section>
-    <h3 class="section-title">Education</h3>
-    <div class="card">
-        <ul>
-            <li><strong>Ph.D. — Data Analytics & Business Administration</strong>, Grand Canyon University (Dec 2025)</li>
-            <li><strong>MS — Management Information Systems</strong>, University of Illinois Springfield</li>
-        </ul>
-    </div>
-</section>
+<div className="timeline">
 
-<section>
-    <h3 class="section-title">Certifications</h3>
-    <div class="card">
-        Certified Scrum Master • Graduate Certificate in Business Analytics • Business Process Management • IT Project Management
-    </div>
-</section>
-
-<section>
-    <h3 class="section-title">Connect</h3>
-    <div class="card">
-        📍 Albuquerque, NM<br>
-        📧 <a href="mailto:vaibhav.k.tripathi90@gmail.com">vaibhav.k.tripathi90@gmail.com</a><br>
-        🔗 <a href="https://www.linkedin.com/in/vaibhav-tripathi/">LinkedIn</a><br>
-        🌐 <a href="https://vaibhav-tripathi.github.io/">GitHub Pages</a>
-    </div>
-</section>
-
+<div className="timeline-item">
+<h4>Senior MDM Administrator – Presbyterian Healthcare Services</h4>
+<p>2019 – Present</p>
+<ul>
+<li>Lead Enterprise Master Data Management</li>
+<li>Epic Clarity, Chronicles, Caboodle</li>
+<li>Enterprise BI Strategy & Governance</li>
+</ul>
 </div>
 
+<div className="timeline-item">
+<h4>Data Analyst – Illinois HFS Medicaid</h4>
+<p>2017 – 2018</p>
+<ul>
+<li>Healthcare financial analytics</li>
+<li>BI & automation</li>
+</ul>
+</div>
+
+<div className="timeline-item">
+<h4>Software Engineer – HSBC</h4>
+<p>2012 – 2016</p>
+<ul>
+<li>BI, ETL, Enterprise Reporting</li>
+<li>Data quality & system modernization</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+
+<section id="research" className="container mt-5">
+<h2 className="text-center mb-4">Research & Publications</h2>
+
+<div className="row">
+
+<div className="col-md-6">
+<div className="card-custom">
+<h5>Ph.D — Data Analytics & Business Administration</h5>
+<p>Focus: Healthcare Predictive Analytics, Telehealth, Glucose Regulation, Population Health</p>
+</div>
+</div>
+
+<div className="col-md-6">
+<div className="card-custom">
+<h5>Key Areas</h5>
+<ul>
+<li>Healthcare Data Science</li>
+<li>Predictive Analytics</li>
+<li>Decision Support Systems</li>
+</ul>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section id="cert" className="container mt-5">
+<h2 className="text-center mb-4">Certifications</h2>
+
+<div className="row">
+
+<div className="col-md-4">
+<div className="card-custom text-center">
+<h5>Epic & Healthcare Data</h5>
+</div>
+</div>
+
+<div className="col-md-4">
+<div className="card-custom text-center">
+<h5>AWS / Cloud</h5>
+</div>
+</div>
+
+<div className="col-md-4">
+<div className="card-custom text-center">
+<h5>Project & Agile Leadership</h5>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section id="contact" className="container mt-5 text-center">
+<h2 className="mb-3">Contact</h2>
+
+<p>Email: <a href="mailto:vaibhav.k.tripathi90@gmail.com">
+vaibhav.k.tripathi90@gmail.com</a></p>
+
+<p>
+<a href="https://www.linkedin.com/in/vaibhav-tripathi" target="_blank" className="btn btn-secondary">
+<i className="bi bi-linkedin"></i> LinkedIn
+</a>
+</p>
+</section>
+
 <footer>
-    © 2026 — Built & Maintained by Vaibhav Tripathi
+© 2026 — Built for Vaibhav Tripathi
 </footer>
 
-</body>
+</div>
+);
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
