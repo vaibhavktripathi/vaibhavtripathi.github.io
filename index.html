@@ -58,6 +58,19 @@ footer{
   text-align:center;
   font-size:14px;
 }
+
+.skill-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.skill-list li:last-child {
+  border-bottom: none;
+}
+
+#skills .card {
+  border-radius: 12px;
+}
 </style>
 
 <!-- GOOGLE ANALYTICS (replace G-XXXXXXX) -->
@@ -83,6 +96,7 @@ gtag('config', 'G-XXXXXXX');
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+		<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>		
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
@@ -126,6 +140,75 @@ gtag('config', 'G-XXXXXXX');
 </div>
 
 </div>
+</section>
+
+<!-- SKILLS & EXPERTISE -->
+<section id="skills" class="section bg-light">
+  <div class="container">
+
+    <h2 class="text-center mb-5" data-aos="fade-up">
+      Skills & Expertise
+    </h2>
+
+    <div class="row">
+
+      <!-- CORE SKILLS -->
+      <div class="col-lg-6 mb-4" data-aos="fade-right">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="card-title mb-3">Core Skills & Competencies</h4>
+            <ul class="list-unstyled skill-list">
+              <li>Data Strategy & Governance | Enterprise Data Management & Integration</li>
+              <li>Master Data Management (MDM) | Data Quality & Compliance</li>
+              <li>Business Intelligence & Analytics | Predictive Modeling & Decision Support</li>
+              <li>Cross-Functional Leadership & Stakeholder Management</li>
+              <li>Project Management & Agile Methodologies | Strategic Decision Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECHNICAL SKILLS -->
+      <div class="col-lg-6 mb-4" data-aos="fade-left">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h4 class="card-title mb-3">Technical Skills</h4>
+
+            <p><strong>Programming & Scripting:</strong><br>
+              SQL, T-SQL, PL/SQL, Python, SAS, Shell Scripting, PowerShell, HTML, CSS, C
+            </p>
+
+            <p><strong>Databases & Platforms:</strong><br>
+              Teradata, DB2, Oracle 11g, MySQL, Microsoft SQL Server, Hive, AWS, Windows, UNIX, Linux, Citrix
+            </p>
+
+            <p><strong>BI / ETL Tools:</strong><br>
+              IBM Cognos, SAS (Base, EG, E-Miner, Management Console), DataStage, Informatica, SSIS, SSRS, SSAS, Tableau, Pentaho, DMExpress
+            </p>
+
+            <p><strong>Data Management & Modeling:</strong><br>
+              IBM MDM, Relational Data Management, Data Modeling, Business Process Modeling (Visio, Bizagi, ARIS, SAP)
+            </p>
+
+            <p><strong>Scheduling & Automation:</strong><br>
+              Control-M, IBM Workload Scheduler, Connect:Direct, SSH/SCP/SFTP, Adtempus
+            </p>
+
+            <p><strong>Project Management & Collaboration:</strong><br>
+              Agile / Scrum, Microsoft Project, CA Clarity, CA GSD R12, HP Quality Center, Git / GitHub
+            </p>
+
+            <p><strong>Testing:</strong><br>
+              Unit Testing, System Testing, User Acceptance Testing
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <!-- PROJECTS -->
